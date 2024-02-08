@@ -47,10 +47,10 @@ const {balance}=users
   };
 
   return (
-    <div id='font1'>
+    <div >
       <div className="card category-card" style={{ backgroundImage: `url(${img})` }}>
       </div>
-      <h3  onClick={handleAddCategory}>
+      <h3 id='font1'  onClick={handleAddCategory}>
       {year} {balance} {isRented ? 'rented' : null} {isRented ?  <GrSubtractCircle /> :<CgAdd />}
         
       </h3>

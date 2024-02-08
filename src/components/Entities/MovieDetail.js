@@ -4,9 +4,9 @@ import './MovieDetail.css';
 
 const MovieDetail = ({ categories }) => {
   const { ID } = useParams();
- console.log(ID)
+//  console.log(ID)
   const entity = categories.find(entity => entity.id == ID);
-  console.log()
+  // console.log()
 
   if (!entity) {
     return <p>Entity not found</p>;
