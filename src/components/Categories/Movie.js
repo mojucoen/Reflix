@@ -3,10 +3,9 @@ import './CategoryList.css';
 import { CgAdd } from "react-icons/cg";
 import { GrSubtractCircle } from "react-icons/gr";
 
-
 const Movie = ({ setCategories, categoryData, setUsers, users, id }) => {
-  const { title, year, img, isRented } = categoryData;
-
+  const { title, year, img, isRented,price } = categoryData;
+const {balance}=users
   const handleAddCategory = () => {
     // Assuming setCategories is a function that updates state
     setCategories((prevCategories) => {
@@ -14,14 +13,13 @@ const Movie = ({ setCategories, categoryData, setUsers, users, id }) => {
       return prevCategories.map((category) => {
         if (category.title === title) {
           if(!(category.isRented)){
-          // Update the isRented property for the clicked category
+            console.log("first")
 
-          // Assuming users is an array of objects with id and title properties
           setUsers((prevUsers) => {
             return prevUsers.map((user) => {
               if (user.id == id) {
-                // Update the user's title property in an immutable way
-                return { ...user, title: [...user.title, title] };
+             
+                return { ...user, balance:user.balance-price };
               }
               return user;
             });
@@ -33,8 +31,7 @@ const Movie = ({ setCategories, categoryData, setUsers, users, id }) => {
           setUsers((prevUsers) => {
             return prevUsers.map((user) => {
               if (user.id == id) {
-                // Update the user's title property in an immutable way
-                return { ...user, title: [...user.title, ''] };
+                return { ...user,  balance:user.balance+price };
               }
               return user;
             });
@@ -50,15 +47,14 @@ const Movie = ({ setCategories, categoryData, setUsers, users, id }) => {
   };
 
   return (
-    <>
+    <div id='font1'>
       <div className="card category-card" style={{ backgroundImage: `url(${img})` }}>
       </div>
-      <h3 onClick={handleAddCategory}>
-      {year} {isRented ? 'rented' : null} {isRented ?  <GrSubtractCircle /> :<CgAdd />
-}
+      <h3  onClick={handleAddCategory}>
+      {year} {balance} {isRented ? 'rented' : null} {isRented ?  <GrSubtractCircle /> :<CgAdd />}
         
       </h3>
-    </>
+    </div>
   );
 }
 

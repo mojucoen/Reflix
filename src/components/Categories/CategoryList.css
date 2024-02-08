@@ -19,12 +19,15 @@
 
 
   }
+  #font1{
+    color: #dcf3f5;
+  }
   .sorting{
     display: flex;
     flex-direction: column;
   }
   .category-card h2 {
-    color: rgb(21, 19, 19);
+    color: rgb(176, 151, 151);
     font-size: 24px;
     font-weight: bold;
     margin: 0;
@@ -34,7 +37,7 @@
     color: #F5F5DC;
   }
   .category-card p {
-    color: rgb(8, 5, 5);
+    color: rgb(135, 94, 94);
     font-family: serif;
     font-weight: bold;
     font-size: 18px;
@@ -54,6 +57,7 @@
     margin: 0;
   }
   .category-rent{
+    color: #F5F5DC;
     display: flex;
     flex-wrap: wrap;
     /* justify-content: center; */

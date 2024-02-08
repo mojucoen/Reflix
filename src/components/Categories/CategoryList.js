@@ -7,7 +7,7 @@ import MoviesRented from './MoviesRented';
 
 const CategoryList = ({ categories, setCategories, categoriesData, users, setUsers }) => {
   const { ID } = useParams();
-  const entity = users.find(entity => entity.id === parseInt(ID, 10));
+  const entity = users.find(entity => entity.id == parseInt(ID, 10));
 
   if (!entity) {
     return <p>User not found</p>;
@@ -16,7 +16,7 @@ const CategoryList = ({ categories, setCategories, categoriesData, users, setUse
 
     return (
       <div className='sorting'>
-        <SearchFeature setCategories={setCategories} categories={categories} />
+        <SearchFeature setCategories={setCategories} categoriesData={categoriesData} />
         <div className="category-rent">Welcome {name}, your balance is {balance}
         
         <MoviesRented categories={categories} setUsers={setUsers} users={users} id={ID} setCategories={setCategories} />

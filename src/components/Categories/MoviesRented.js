@@ -6,14 +6,14 @@ export default function MoviesRented({ categories, setUsers, users, id, setCateg
   if (!rentedUser) {
     return <div>User not found</div>;
   }
-console.log(rentedUser)
+// console.log(rentedUser)
   const rentedCategory = categories.find(category => category.title == rentedUser.title);
 
   const handleSetCategories = () => {
     setCategories([rentedCategory]);
   };
 
-  console.log(categories);
+  // console.log(categories);
 
   return (
     <div className='textCol'>

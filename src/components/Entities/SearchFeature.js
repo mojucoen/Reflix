@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const SearchFeature = ({ setCategories, categories, categoriesData }) => {
+export const SearchFeature = ({ setCategories, categoriesData }) => {
   const [name, setName] = useState("");
 
   const searchStr = () => {
@@ -11,7 +11,6 @@ export const SearchFeature = ({ setCategories, categories, categoriesData }) => 
     if (filteredCategories.length > 0) {
       setCategories(filteredCategories);
     } else {
-      // If the search string is empty, reset to the original categoriesData
       setCategories(categoriesData);
     }
   };
